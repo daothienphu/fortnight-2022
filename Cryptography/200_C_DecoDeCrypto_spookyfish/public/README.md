@@ -1,0 +1,1 @@
+My friend Deco de Crypto sent me this and challenged me to find his message. But how am I supposed to crack this code?

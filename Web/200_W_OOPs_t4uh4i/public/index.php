@@ -44,11 +44,11 @@
             echo(serialize($msg));
             
             try {
-              $logger = new Logger("You sent the message: " . $msg["content"]);
+              $logger = new Logger("You sent the message: " . $msg["content"] . PHP_EOF);
             } finally {
               // Automatically handle problem of invalid object
               // How clever am I
-              $logger = new Logger("Oops, something happened");
+              $logger = new Logger("Oops, something happened" . PHP_EOF);
             }
           }
         ?>

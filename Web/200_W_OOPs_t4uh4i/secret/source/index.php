@@ -41,11 +41,10 @@
           if (isset($_GET["msg"])) {
             // TODO: create a new class for message ;)
             $msg = unserialize(base64_decode($_GET["msg"]));
-            echo(serialize($msg));
             
             try {
               $logger = new Logger("You sent the message: " . $msg["content"]);
-            } finally {
+            } catch (Exception $ex) {
               // Automatically handle problem of invalid object
               // How clever am I
               $logger = new Logger("Oops, something happened");

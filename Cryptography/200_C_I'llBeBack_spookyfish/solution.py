@@ -1,5 +1,5 @@
 from pwn import *
-conn = remote("127.0.0.1", 69)
+conn = remote("103.245.249.107", 20302)
 
 KEY_LENGTH = 6900
 

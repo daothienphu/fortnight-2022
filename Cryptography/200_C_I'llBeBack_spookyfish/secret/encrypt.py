@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 import binascii
 import threading
@@ -16,7 +15,6 @@ Can you find the flag hidden in plain sight?
 
 KEY_LENGTH = 6900
 FLAG_FILE = "flag.txt"
-
 class Service(socketserver.BaseRequestHandler):
     #handle() will always run first
     def handle(self):
@@ -26,21 +24,17 @@ class Service(socketserver.BaseRequestHandler):
 
         self.send(banner)
         encrypted_flag = self.encrypt_flag().decode()
-        #print("encrypted: ", encrypted_flag)
         if not encrypted_flag:
             return
         self.send("Here is the ecrypted flag:" + encrypted_flag + "\n")
         
         while True:
             self.send("Send me anything, I will encrypt it for you.")
-            user_input = self.receive("Your message: ").decode("utf-8")
-            #print("ui: ",user_input)
+            user_input = self.receive("Your message: ").strip().decode("utf-8")
             if (self.assure_hex(user_input)):
                 user_input = bytes.fromhex(user_input)
-                #print("ui enc",user_input)
-                encrypted_user_input = self.encrypt_user_input(user_input).decode()
-                self.send("Encrypted message: " + encrypted_user_input + "\n")
-                #print(bytes.fromhex(encrypted_user_input))
+                encrypted_user_input = self.encrypt_user_input(user_input).decode() 
+                self.send("Encrypted message: " + encrypted_user_input + "\n") 
             else:
                 self.send("Hey! That's not a hexadecimal string!\n")
                 return
@@ -87,7 +81,7 @@ class Service(socketserver.BaseRequestHandler):
 
     def receive(self, prompt=": "):
         self.send(prompt, newline=False)
-        return self.request.recv(4096).strip()
+        return self.request.recv(1000).strip()
 
 class ThreadedService(
     socketserver.ThreadingMixIn,

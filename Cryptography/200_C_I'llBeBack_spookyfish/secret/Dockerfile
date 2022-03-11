@@ -1,7 +1,7 @@
 FROM python:3.8-slim-buster
-WORKDIR /source
+WORKDIR /
 
-COPY flag.txt /flag.txt
-COPY encrypt.py /encrypt.py
+COPY ./flag.txt ./flag.txt
+COPY ./encrypt.py ./encrypt.py
 
 CMD [ "python3", "encrypt.py" ]

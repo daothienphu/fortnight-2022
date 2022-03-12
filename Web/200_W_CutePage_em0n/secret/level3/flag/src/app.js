@@ -6,7 +6,7 @@ app.use(express.urlencoded());
 users = [];
 
 app.all('/flag', (req, res) => {
-  return res.send("sh@de_")
+  return res.sendFile("flag");
 })
 
 

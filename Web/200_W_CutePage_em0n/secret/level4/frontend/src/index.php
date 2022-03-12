@@ -19,8 +19,8 @@
 <head>
 </head>
 <body>
-    <h1>Nhập một đường link, và chúng tôi sẽ giúp bạn hiển thị nó</h1><br>
-    <h2>Do vấn đề bảo mật, chúng tôi chỉ thực hiện request tới API host của chúng tôi</h2><br>
+    <h1>Nhập một đường link, và chúng tôi sẽ giúp bạn hiển thị nó</h1>
+    <h2>Do vấn đề bảo mật, chúng tôi chỉ thực hiện request tới API host của chúng tôi</h2>
     <h2>Thành thật xin lỗi vì sự bất tiện này<h2>
     <form>
     API của bạn: <input name="url" placeholder="/hello">

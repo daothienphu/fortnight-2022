@@ -17,7 +17,7 @@
 <head>
 </head>
 <body>
-    <h1>Nhập một đường link, và chúng tôi sẽ giúp bạn hiển thị nó</h1><br>
+    <h1>Nhập một đường link, và chúng tôi sẽ giúp bạn hiển thị nó</h1>
     <h2>Do bị hack quá nhiều nên chúng tôi đã quyết định sẽ không phòng thủ nữa 😂</h2>
     <form>
     URL của bạn: <input name="url" placeholder="http://example.com">

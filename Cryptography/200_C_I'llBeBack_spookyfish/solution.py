@@ -13,13 +13,13 @@ KEY_LENGTH -= flag_length
 while True:
     print(conn.recvuntil("Your message: ".encode()).decode())
     
-    msg_to_send = "a"*min(1000, KEY_LENGTH)*2
+    msg_to_send = "a"*min(500, KEY_LENGTH)*2
     print(msg_to_send)
     conn.send(msg_to_send.encode())
-    
+
     print(conn.recvuntil("Encrypted message: ".encode()).decode())
-    print(conn.recvline())
-    
+    print(conn.recvuntil("\n".encode()).strip().decode())
+
     KEY_LENGTH -= len(msg_to_send) // 2
     print("Key length left: ",KEY_LENGTH)
     if KEY_LENGTH == 0:

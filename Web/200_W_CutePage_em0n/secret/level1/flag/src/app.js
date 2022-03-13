@@ -6,7 +6,7 @@ app.use(express.urlencoded());
 users = [];
 
 app.all('/flag', (req, res) => {
-  return res.sendFile("flag");
+  return res.sendFile("flag", { root: __dirname });
 })
 
 

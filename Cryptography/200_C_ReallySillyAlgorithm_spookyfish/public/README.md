@@ -1,0 +1,1 @@
+I'm making a signing server project to apply for an internship at a bank. I implemented a Really Silly Algorithm, see if you can hack it.

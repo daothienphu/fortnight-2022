@@ -1,7 +1,7 @@
 from pwn import *
 from binascii import hexlify, unhexlify
 from Crypto.Util.number import bytes_to_long, long_to_bytes, inverse
-conn = remote("127.0.0.1", 42)
+conn = remote("103.245.249.107", 20314)
 e = 0x10001
 n = 0
 
@@ -15,7 +15,6 @@ def to_sign(conn, msg, hex=False):
     print(conn.recvuntil("Your choice: ".encode()).decode())
     print("1")
     conn.sendline("1\n".encode())
-    print(213)
     print(conn.recvuntil("Command to sign: ".encode()).decode())
     if hex == False:
         msg = hexlify(msg.encode()).decode()

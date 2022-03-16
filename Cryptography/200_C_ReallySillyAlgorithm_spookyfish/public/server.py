@@ -121,7 +121,7 @@ class ThreadedService(
 
 def main():
     port = 20314
-    host = "103.245.249.207"
+    host = "103.245.249.107"
 
     service = Service
     server = ThreadedService((host, port), service)
